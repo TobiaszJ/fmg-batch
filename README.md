@@ -2,6 +2,12 @@
 
 Python client for batch processing firewall policies via the FortiManager API.
 
+## Purpose
+
+FortiManager does not natively support batch processing of firewall policies, nor does it provide a proper export/import functionality. This project was created to fill that gap by enabling bulk operations on policies, such as mass interface replacements and updates, through a simple CLI and Python API.
+
+The development of this project was assisted by an AI agent running Claude 3.7 Sonnet.
+
 ## Features
 
 - Download firewall policies from FortiManager
@@ -107,8 +113,8 @@ from fmg_batch.utils import batch_replace_interfaces, print_policy_changes
 changes = batch_replace_interfaces(
     input_dir="policies",
     output_dir="modified_policies",
-    interface_to_replace="MPLS",
-    replacement_interfaces=["DP_VPN1", "DP_VPN2", "HI_VPN1", "HI_VPN2", "VPN1", "VPN2"]
+    interface_to_replace="x1",
+    replacement_interfaces=["x3", "x4"]
 )
 
 # Print the changes
